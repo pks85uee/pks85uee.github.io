@@ -4,7 +4,7 @@ EDIT THIS FILE: content/contact.txt
 CONTACT INFORMATION
 -------------------
 
-Email: hello@example.com
+Email: puneet.singh@iiml.org
 LinkedIn: linkedin.com/in/yourprofile
 Twitter / X: @yourhandle
 
