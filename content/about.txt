@@ -4,7 +4,7 @@ EDIT THIS FILE: content/about.txt
 ABOUT ME - Main Content
 ------------------------
 
-Welcome to my personal website! I'm a passionate professional dedicated to creating meaningful work and solving complex problems. With years of experience in my field, I focus on delivering high-quality results and continuous learning.
+Welcome to my personal pages! I'm a passionate professional dedicated to creating meaningful work and solving complex problems. With years of experience in my field, I focus on delivering high-quality results and continuous learning.
 
 I believe in the power of collaboration and clear communication. Throughout my career, I've had the opportunity to work with talented teams, lead innovative projects, and make a positive impact in the industry.
 
