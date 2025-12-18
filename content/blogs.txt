@@ -1,0 +1,45 @@
+EDIT THIS FILE: content/blogs.txt
+========================================================================================
+
+BLOG ENTRY 1 (Most Recent)
+---------------------------
+Title: Building Scalable Web Applications
+Date: December 15, 2025
+Summary: Learn the key principles for building web applications that can grow with your business. In this article, I discuss architectural patterns, database optimization, and caching strategies that can help you scale effectively.
+
+
+BLOG ENTRY 2
+---------------------------
+Title: The Future of Cloud Computing
+Date: December 8, 2025
+Summary: Exploring emerging trends in cloud technology and what they mean for businesses. From edge computing to serverless architecture, the cloud landscape is rapidly evolving. This article covers the trends that will shape the industry.
+
+
+BLOG ENTRY 3
+---------------------------
+Title: Effective Team Leadership in Remote Environments
+Date: November 30, 2025
+Summary: Remote work has become the norm, and leading teams across distances requires new approaches. I share practical strategies for maintaining team cohesion, ensuring clear communication, and keeping everyone motivated and engaged.
+
+
+BLOG ENTRY 4
+---------------------------
+Title: User Experience Design Best Practices
+Date: November 20, 2025
+Summary: Great design is not just about aesthetics; it's about creating intuitive experiences that users love. This article covers key UX principles, user research methods, and testing strategies to validate your design decisions.
+
+
+BLOG ENTRY 5 (Oldest)
+---------------------------
+Title: Getting Started with Data-Driven Development
+Date: November 10, 2025
+Summary: Making decisions based on data rather than intuition leads to better outcomes. Learn how to set up analytics, define meaningful metrics, and use insights to continuously improve your products and services.
+
+
+HOW TO EDIT:
+- List blog entries from MOST RECENT first (reverse chronological order)
+- Follow the format: Title, Date, Summary
+- Write summaries as 2-3 sentences
+- Date format: Month Day, Year
+- Add new entries at the TOP of the list
+- The website will display them in the order listed here

@@ -1,0 +1,44 @@
+EDIT THIS FILE: content/contact.txt
+========================================================================================
+
+CONTACT INFORMATION
+-------------------
+
+Email: hello@example.com
+LinkedIn: linkedin.com/in/yourprofile
+Twitter / X: @yourhandle
+
+
+CONTACT FORM SETUP (OPTIONAL)
+------------------------------
+
+The contact form on the website is currently a UI placeholder. To make it functional, 
+you have these FREE options:
+
+OPTION 1: Use Formspree (Recommended for beginners)
+- Go to formspree.io
+- Sign up with your email
+- Create a new form
+- Copy your form ID (looks like: abc123def456)
+- In contact.html, replace "YOUR_FORM_ID" in this line:
+  action="https://formspree.io/f/YOUR_FORM_ID"
+- Save and test!
+
+OPTION 2: Use Netlify Forms (Best if hosting on Netlify)
+- Just add this to the <form> tag:
+  netlify
+- That's it! Netlify will handle form submissions automatically
+
+OPTION 3: Use EmailJS (No backend needed)
+- Go to emailjs.com
+- Sign up and follow their setup
+- Add their JavaScript to contact.html
+- Configure your email details
+
+
+HOW TO EDIT:
+- Replace "hello@example.com" with your actual email
+- Replace "linkedin.com/in/yourprofile" with your LinkedIn profile URL
+- Replace "@yourhandle" with your Twitter/X handle
+- Follow the instructions above to enable form submissions
+- If you don't want a contact form, you can leave it as is (just links)

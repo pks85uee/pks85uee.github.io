@@ -1,0 +1,41 @@
+EDIT THIS FILE: content/projects.txt
+========================================================================================
+
+PROJECT 1
+---------
+Name: E-Commerce Platform Redesign
+Role: Lead Developer
+Description: Redesigned and modernized the e-commerce platform, improving user experience and increasing conversion rates by 35%. Implemented responsive design principles and optimized performance across all devices.
+Impact: 35% increase in conversions, improved customer satisfaction scores, faster page load times
+
+
+PROJECT 2
+---------
+Name: Data Analytics Dashboard
+Role: Project Manager
+Description: Built a comprehensive analytics dashboard that provides real-time insights into business metrics. Enabled data-driven decision making for the executive team and improved reporting efficiency.
+Impact: Reduced reporting time by 60%, enabled real-time insights, improved decision-making speed
+
+
+PROJECT 3
+---------
+Name: Mobile App Development
+Role: Senior Developer
+Description: Developed a feature-rich mobile application that serves thousands of users. Focused on performance, accessibility, and user satisfaction while maintaining clean, maintainable code.
+Impact: 50,000+ active users, 4.8/5 app rating, minimal bug reports
+
+
+PROJECT 4
+---------
+Name: Cloud Infrastructure Migration
+Role: Architecture Lead
+Description: Led the migration of legacy systems to cloud infrastructure. Improved scalability, reduced costs, and enhanced disaster recovery capabilities for the organization.
+Impact: 40% cost reduction, improved system reliability, 99.9% uptime
+
+
+HOW TO EDIT:
+- Follow the format above for each project
+- Keep the project structure (Name, Role, Description, Impact)
+- You can add more projects by copying the PROJECT template
+- Customize each section with your real projects
+- The website will display all projects as cards automatically
