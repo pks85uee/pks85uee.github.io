@@ -1,0 +1,994 @@
+/* ============================================================================
+   MODERN MINIMAL PERSONAL WEBSITE - MAIN STYLESHEET
+   
+   Design System: Inspired by Stripe, Linear, Notion, Vercel
+   - Clean, timeless, professional aesthetic
+   - Editorial typography focus
+   - Minimal color palette with strategic accent
+   - Generous white space and high readability
+   
+   HOW TO CUSTOMIZE:
+   1. Colors: Look for "COLOR VARIABLES" section below (update primary color here)
+   2. Typography: Search "TYPOGRAPHY" to adjust font sizes
+   3. Spacing: Modify spacing scale in variables (8px base unit)
+   4. Colors: --color-primary is the main brand color (change this for entire site theme)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ============================================================================
+   1. COLOR VARIABLES - MODERN MINIMAL PALETTE
+   
+   NOTE: Change --color-primary to update the entire site's accent color
+   ========================================================================== */
+
+:root {
+    /* Color Palette - Minimal & Professional */
+    --color-primary: #4F46E5;             /* Indigo - Primary accent color (CHANGE THIS TO REBRAND) */
+    --color-primary-light: #6366F1;       /* Slightly lighter for hover states */
+    --color-primary-dark: #4338CA;        /* Slightly darker for active states */
+    
+    --color-bg-primary: #FFFFFF;          /* Main background - pure white */
+    --color-bg-secondary: #F9FAFB;        /* Light secondary - subtle sections */
+    --color-bg-tertiary: #F3F4F6;         /* Even lighter - alternative sections */
+    
+    --color-text-primary: #111827;        /* Main text - dark gray-900 */
+    --color-text-secondary: #6B7280;      /* Secondary text - gray-600 */
+    --color-text-tertiary: #9CA3AF;       /* Tertiary text - gray-400 */
+    
+    --color-border: #E5E7EB;              /* Borders - gray-200 */
+    --color-border-light: #F3F4F6;        /* Light borders - gray-100 */
+    
+    --color-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --color-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --color-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --color-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Spacing Scale (8px base unit) */
+    --spacing-2: 0.125rem;    /* 2px */
+    --spacing-4: 0.25rem;     /* 4px */
+    --spacing-8: 0.5rem;      /* 8px */
+    --spacing-12: 0.75rem;    /* 12px */
+    --spacing-16: 1rem;       /* 16px */
+    --spacing-24: 1.5rem;     /* 24px */
+    --spacing-32: 2rem;       /* 32px */
+    --spacing-48: 3rem;       /* 48px */
+    --spacing-64: 4rem;       /* 64px */
+    
+    /* Container width */
+    --max-width: 1100px;
+}
+
+/* ============================================================================
+   2. GLOBAL STYLES - HTML Elements & Base Resets
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+    flex: 1;
+}
+
+/* ============================================================================
+   3. TYPOGRAPHY - Editorial, Professional, Readable
+   
+   Font Sizing:
+   - H1: 48px (hero/main titles)
+   - H2: 32px (section titles)
+   - H3: 20px (subsection titles)
+   - Body: 16px with 1.6 line-height for readability
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-24);
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-16);
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: var(--spacing-12);
+}
+
+p {
+    margin-bottom: var(--spacing-16);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease, opacity 0.2s ease;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+    opacity: 0.8;
+}
+
+strong {
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+/* ============================================================================
+   4. NAVIGATION BAR - Sticky, Minimal, Professional
+   ========================================================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-bg-primary);
+    border-bottom: 1px solid var(--color-border-light);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-16) var(--spacing-32);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-32);
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-primary);
+    border-bottom: none;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: var(--spacing-16) var(--spacing-16);
+        gap: var(--spacing-16);
+    }
+
+    .nav-logo {
+        font-size: 16px;
+    }
+
+    .nav-links {
+        gap: var(--spacing-16);
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+}
+
+/* ============================================================================
+   5. MAIN CONTENT - Page Layout & Sections
+   
+   Layout principles:
+   - Generous top/bottom padding (64px)
+   - Max width 1100px centered
+   - Alternating background colors (subtle)
+   - Clean white space between sections
+   ========================================================================== */
+
+.main-content {
+    flex: 1;
+}
+
+.section {
+    padding: var(--spacing-64) var(--spacing-32);
+    background-color: var(--color-bg-primary);
+}
+
+.section:nth-child(even) {
+    background-color: var(--color-bg-secondary);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-32);
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-32);
+    color: var(--color-text-primary);
+    line-height: 1.2;
+}
+
+.section-description {
+    font-size: 18px;
+    margin-bottom: var(--spacing-48);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.subsection-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: var(--spacing-48);
+    margin-bottom: var(--spacing-24);
+    color: var(--color-text-primary);
+}
+
+/* Responsive sections */
+@media (max-width: 768px) {
+    .section {
+        padding: var(--spacing-48) var(--spacing-16);
+    }
+
+    .container {
+        padding: 0 var(--spacing-16);
+    }
+
+    .section-title {
+        font-size: 32px;
+        margin-bottom: var(--spacing-24);
+    }
+
+    .section-description {
+        font-size: 16px;
+        margin-bottom: var(--spacing-32);
+    }
+}
+
+/* ============================================================================
+   6. ABOUT PAGE - Professional Introduction with Highlights
+   ========================================================================== */
+
+.about-content {
+    background-color: var(--color-bg-primary);
+    margin-bottom: var(--spacing-48);
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-24);
+    color: var(--color-text-secondary);
+}
+
+/* Skills Grid - Clean Card Layout */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-24);
+    margin: var(--spacing-32) 0;
+}
+
+.skill-card {
+    background-color: var(--color-bg-secondary);
+    padding: var(--spacing-32);
+    border-radius: 8px;
+    border: 1px solid var(--color-border-light);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--color-shadow-md);
+    transform: translateY(-2px);
+}
+
+.skill-card h4 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-12);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.skill-card p {
+    font-size: 15px;
+    margin: 0;
+    color: var(--color-text-secondary);
+}
+
+/* Highlights List - Editorial Style */
+.highlights-list {
+    list-style: none;
+    margin: var(--spacing-32) 0;
+}
+
+.highlights-list li {
+    padding: var(--spacing-24);
+    margin-bottom: var(--spacing-16);
+    background-color: var(--color-bg-secondary);
+    border-left: 3px solid var(--color-primary);
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    transition: all 0.2s ease;
+}
+
+.highlights-list li:hover {
+    border-left-color: var(--color-primary-dark);
+    background-color: var(--color-bg-tertiary);
+}
+
+/* ============================================================================
+   7. PROJECTS PAGE - Card-Based Layout with Subtle Elevation
+   
+   Design: Clean cards with minimal borders, hover elevation effect
+   ========================================================================== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-24);
+    margin: var(--spacing-32) 0;
+}
+
+.project-card {
+    background-color: var(--color-bg-primary);
+    border: 1px solid var(--color-border-light);
+    border-radius: 8px;
+    padding: var(--spacing-32);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: var(--color-border);
+    box-shadow: var(--color-shadow-md);
+    transform: translateY(-4px);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-16);
+    gap: var(--spacing-16);
+}
+
+.project-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-text-primary);
+    flex: 1;
+}
+
+.project-role {
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--spacing-8) var(--spacing-12);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.project-description {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-24);
+    flex-grow: 1;
+    color: var(--color-text-secondary);
+}
+
+.project-impact {
+    background-color: var(--color-bg-secondary);
+    padding: var(--spacing-16);
+    border-radius: 6px;
+    border-left: 3px solid var(--color-primary);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+.project-impact strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-16);
+    }
+
+    .project-card {
+        padding: var(--spacing-24);
+    }
+
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-role {
+        align-self: flex-start;
+    }
+}
+
+/* ============================================================================
+   8. BLOG PAGE - Typography-Focused, Clean, High Readability
+   
+   Design: Large line height, generous spacing, minimal visual clutter
+   ========================================================================== */
+
+.blog-list {
+    margin: var(--spacing-32) 0;
+}
+
+.blog-entry {
+    background-color: var(--color-bg-primary);
+    padding: var(--spacing-32);
+    margin-bottom: var(--spacing-24);
+    border-radius: 8px;
+    border: 1px solid var(--color-border-light);
+    transition: all 0.3s ease;
+}
+
+.blog-entry:hover {
+    border-color: var(--color-border);
+    box-shadow: var(--color-shadow-md);
+}
+
+.blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-16);
+    gap: var(--spacing-16);
+}
+
+.blog-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-text-primary);
+    line-height: 1.4;
+    flex: 1;
+}
+
+.blog-date {
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--spacing-8) var(--spacing-12);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.blog-summary {
+    margin: 0;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+@media (max-width: 768px) {
+    .blog-entry {
+        padding: var(--spacing-24);
+    }
+
+    .blog-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .blog-date {
+        align-self: flex-start;
+    }
+
+    .blog-title {
+        font-size: 18px;
+    }
+}
+
+/* ============================================================================
+   9. CONTACT PAGE - Minimal, Clean, Distraction-Free
+   ========================================================================== */
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-48);
+    margin: var(--spacing-32) 0;
+}
+
+.contact-info,
+.contact-form-section {
+    background-color: var(--color-bg-primary);
+    padding: var(--spacing-32);
+    border-radius: 8px;
+    border: 1px solid var(--color-border-light);
+}
+
+.contact-item {
+    margin-bottom: var(--spacing-32);
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-item h4 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-12);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.contact-item a {
+    word-break: break-all;
+    font-weight: 600;
+}
+
+/* Form Styling */
+.form-note {
+    background-color: #FEF3C7;
+    color: #92400E;
+    padding: var(--spacing-16);
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: var(--spacing-24);
+    line-height: 1.6;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-24);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: var(--spacing-12);
+    color: var(--color-text-primary);
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: var(--spacing-12);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-weight: 400;
+}
+
+/* Buttons */
+.submit-btn {
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--spacing-16) var(--spacing-24);
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+    font-family: 'Inter', sans-serif;
+}
+
+.submit-btn:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--color-shadow-md);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.alternative-contact {
+    background-color: var(--color-bg-secondary);
+    padding: var(--spacing-32);
+    border-radius: 8px;
+    text-align: center;
+    margin-top: var(--spacing-48);
+}
+
+.alternative-contact p {
+    margin-bottom: var(--spacing-16);
+}
+
+/* Responsive Contact Layout */
+@media (max-width: 1024px) {
+    .contact-wrapper {
+        gap: var(--spacing-32);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-24);
+    }
+
+    .contact-info,
+    .contact-form-section {
+        padding: var(--spacing-24);
+    }
+
+    .submit-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ============================================================================
+   10. FOOTER - Minimal Bottom Section with Copyright
+   ========================================================================== */
+
+.footer {
+    background-color: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border-light);
+    padding: var(--spacing-32);
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-32);
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: var(--spacing-24);
+    }
+
+    .footer-content {
+        padding: 0 var(--spacing-16);
+    }
+}
+
+/* ============================================================================
+   11. RESPONSIVE DESIGN - Mobile, Tablet, Desktop Optimization
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    :root {
+        --spacing-64: 3rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-24);
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --spacing-32: 1.5rem;
+        --spacing-48: 2rem;
+        --spacing-64: 2.5rem;
+    }
+
+    body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .nav-container {
+        padding: var(--spacing-12) var(--spacing-16);
+    }
+
+    .nav-logo {
+        font-size: 16px;
+    }
+
+    .nav-links {
+        gap: var(--spacing-16);
+    }
+
+    .section {
+        padding: var(--spacing-48) var(--spacing-16);
+    }
+
+    .container {
+        padding: 0 var(--spacing-16);
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: var(--spacing-24);
+    }
+
+    .section-description {
+        font-size: 16px;
+        margin-bottom: var(--spacing-24);
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-16);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-16);
+    }
+
+    .project-card {
+        padding: var(--spacing-24);
+    }
+
+    .blog-entry {
+        padding: var(--spacing-24);
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --spacing-16: 0.75rem;
+        --spacing-24: 1rem;
+        --spacing-32: 1.25rem;
+        --spacing-48: 1.5rem;
+        --spacing-64: 2rem;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: var(--spacing-16);
+    }
+
+    h2 {
+        font-size: 22px;
+        margin-bottom: var(--spacing-16);
+    }
+
+    h3 {
+        font-size: 16px;
+        margin-bottom: var(--spacing-12);
+    }
+
+    p {
+        font-size: 14px;
+        margin-bottom: var(--spacing-12);
+    }
+
+    .nav-container {
+        padding: var(--spacing-12) var(--spacing-16);
+        flex-direction: column;
+        gap: var(--spacing-12);
+    }
+
+    .nav-logo {
+        font-size: 14px;
+    }
+
+    .nav-links {
+        gap: var(--spacing-12);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .section {
+        padding: var(--spacing-32) var(--spacing-16);
+    }
+
+    .container {
+        padding: 0 var(--spacing-16);
+    }
+
+    .section-title {
+        font-size: 22px;
+        margin-bottom: var(--spacing-16);
+    }
+
+    .skill-card,
+    .project-card,
+    .blog-entry {
+        padding: var(--spacing-16);
+    }
+
+    .submit-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ============================================================================
+   12. UTILITY CLASSES - Common Patterns
+   ========================================================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.mt-16 {
+    margin-top: var(--spacing-16);
+}
+
+.mt-24 {
+    margin-top: var(--spacing-24);
+}
+
+.mt-32 {
+    margin-top: var(--spacing-32);
+}
+
+.mb-16 {
+    margin-bottom: var(--spacing-16);
+}
+
+.mb-24 {
+    margin-bottom: var(--spacing-24);
+}
+
+.mb-32 {
+    margin-bottom: var(--spacing-32);
+}
+
+/* ============================================================================
+   DESIGN SYSTEM NOTES
+   ========================================================================== */
+
+/*
+   CUSTOMIZATION GUIDE:
+   
+   1. PRIMARY COLOR:
+      Change --color-primary to rebrand the entire site.
+      Example: --color-primary: #1E3A8A for deep blue, or #DC2626 for red
+   
+   2. TYPOGRAPHY:
+      All fonts use Inter (imported from Google Fonts)
+      Adjust font sizes in the Typography section (H1, H2, H3, P)
+   
+   3. SPACING:
+      Uses 8px base unit. All spacing is multiples of 8px for consistency.
+      Modify --spacing-* variables to adjust overall spacing scale.
+   
+   4. COLOR PALETTE:
+      --color-bg-*: Backgrounds (white, light gray, lighter gray)
+      --color-text-*: Text colors (primary, secondary, tertiary)
+      --color-border*: Borders (light borders, normal borders)
+      --color-shadow*: Shadow depth for cards and elevation
+   
+   5. RESPONSIVE:
+      1024px breakpoint for desktop optimizations
+      768px breakpoint for tablet
+      480px breakpoint for mobile
+      Test on actual devices for best results!
+   
+   6. HOVER STATES:
+      Most interactive elements have smooth transitions (0.2-0.3s)
+      Cards lift on hover with subtle shadows
+      Links lighten or change color on hover
+*/
+
+/* ============================================================================
+   END OF STYLESHEET
+   ========================================================================== */
