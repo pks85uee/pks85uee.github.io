@@ -192,6 +192,14 @@ strong {
     letter-spacing: -0.5px;
 }
 
+/* Logo image sizing and alignment */
+.nav-logo a { display: inline-flex; align-items: center; gap: 12px; }
+.site-logo { height: 36px; width: auto; display: block; }
+
+@media (max-width: 768px) {
+    .site-logo { height: 28px; }
+}
+
 .nav-links {
     list-style: none;
     display: flex;
